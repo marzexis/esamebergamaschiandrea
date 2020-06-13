@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ita" { width: 100%; height: 100%; height: auto; }>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link href="river.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
+
+
+
+    <style>
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+
+        .hider::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+
+    <title>ITBroaband</title>
+
+</head>
+
+<body class="">
+    <div class="text-center d-flex w-100 h-100 mx-auto flex-column">
+        <header class="text-center cover-container d-flex w-100 h-100 p-3 mx-auto flex-column masthead mb-auto">
+            <div class="inner">
+
+                <h3 class="masthead-brand example">AllMyData <img src="db.png"
+                        style="width: 23px; height:23px; bottom: 6px;"> </img></h3>
+                <nav class="nav nav-masthead justify-content-center">
+
+                    <div class="d-flex flex-grow-1;">
+
+
+                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link active" href="edit.html">Edit</a>
+                        <a class="nav-link" href="maps.html">Maps</a>
+
+
+
+                    </div>
+
+                </nav>
+            </div>
+        </header>
+
+        <hr class="mb-4">
+        <hr class="mb-4">
+        <div class="row" style="width: 100vw;">
+            <!-- Prima colonna -->
+            <div class="col" style="margin-left: 4vw; width:50vw ">
+                <hr class="mb-4">
+                <h4 class="mb-3">Visualizza Dati</h4>
+
+                <div>
+                    <iframe frameborder="0" style="height: 550px; overflow:scroll; width: 1060px;border-radius: 5px;"
+                        src="tabella.php" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain"
+                        seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </div>
+
+            <!-- Seconda colonna -->
+            <div class="col-md-4" style="margin-right: 2vw ; width:50vw">
+                <div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Inserisci Dati</h4>
+
+                    <form method="POST" action="insert.php" style="height: 490px; width: 500px;padding: 10px; background-color: #1A1A1B  ; 
+                        border-radius: 5px;">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <label for="Longitude">Longitude</label>
+                                <input type="text" class="form-control" name="XCoord" placeholder="00.00000" value=""
+                                    required>
+
+
+                                <div class="invalid-feedback">
+                                    Longitude is required.
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="Latitude">Latitude</label>
+                                <input type="text" class="form-control" name="YCoord" placeholder="00.00000" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    Latitude is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label for="GRID_ID">Grid ID</label>
+                                <input type="text" class="form-control" name="GRID_ID" placeholder="1kmN1234E1234"
+                                    required>
+
+                                <div class="invalid-feedback">
+                                    Grid ID is required.
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label for="N_Addresses">N_Addresses</label>
+                                <input type="text" class="form-control" name="N_ADDRESSES" placeholder="N_ADDRESSES"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Please enter the address.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="SPEED_DOWN">SPEED_DOWN</label>
+                                <input type="text" class="form-control" name="SPEED_DOWN" placeholder="DOWN" value=""
+                                    required>
+                                <div class="invalid-feedback">
+                                    This Field is required.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="SPEED_UPLOAD">SPEED_UPLOAD</label>
+                                <input type="text" class="form-control" name="SPEED_UPLOAD" placeholder="UPLOAD"
+                                    value="" required>
+                                <div class="invalid-feedback">
+                                    This Field is required.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="COVERAGE">COVERAGE</label>
+                                <input type="text" class="form-control" name="COVERAGE" placeholder="COVERAGE" required>
+                                <div class="invalid-feedback">
+                                    Please enter the COVERAGE Data.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="TYPE">TYPE</label>
+                                <select class="form-control" name="TYPE" value="" required>
+                                    <option value="1">ADSL</option>
+                                    <option value="2">VDSL</option>
+                                    <option value="3">EVDSL</option>
+                                    <option value="4">FTTH</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    This Field is required.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Carica Dati</button>
+                        <hr class="mb-1">
+                        
+                        
+                            <a class="btn btn-primary btn-lg btn-block" id="button" href="#middle">Visualizza Dati</a>
+                       
+                            
+                        
+                    </form>
+                    <hr class="mb-1">
+                    <div
+                        style="height: 30px; width: 500px; background-color: rgb(44, 44, 46); border-radius: 5px; text-align :center">
+                        X.Y: 0000000.000 | GRID_ID 1kmN1234E1234 </div>
+                        
+                </div>
+            </div>
+        </div>
+
+
+        <hr class="mb-4">
+        <hr class="mb-4">
+        <hr class="mb-4">
+        <hr class="mb-4">
+
+        <div class="row" style="width: 100vw;">
+            <!-- Prima colonna -->
+            <div class="col" style="margin-left: 4vw; width:50vw ">
+                <hr class="mb-4">
+                <h4 class="mb-3">Mappa Dati</h4>
+
+                <div>
+                    <iframe frameborder="0" style="height: 550px; overflow:scroll; width: 1060px;border-radius: 5px;"
+                        src="mappa.html" marginheight="1" marginwidth="1" name="cboxmain" id="cboxmain"
+                        seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+                </div>
+            </div>
+
+            <!-- Seconda colonna -->
+            <div class="col-md-4" style="margin-right: 2vw ; width:50vw">
+                <div>
+                    <hr class="mb-4">
+                    <h4 class="mb-3">Elimina Dati</h4>
+                    <form method="POST" action="remove.php" style="height: auto; width: 500px;padding: 10px; ; background-color: #1A1A1B  ; 
+                        border-radius: 5px;">
+                        <div class="">
+                            <label for="GRID_ID">Grid ID</label>
+                            <input type="text" class="form-control" id="middle" name="GRID_ID" placeholder="1kmN1234E1234"
+                                required>
+                            <div class="invalid-feedback">
+                                Grid ID is required.
+                            </div>
+                        </div>
+                        <hr class="mb-1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary btn-block"  type="submit">Elimina
+                                    Dati</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button   class="btn btn-primary  btn-block"  type="submit">Upload Dati
+                                    nel Database</button>
+                            </div>
+                        </div>
+
+                    </form>
+
+                    <hr class="mb-1">
+
+                    <hr class="mb-1">
+
+                    <div
+                        style="height: 30px; width: 510px; background-color: rgb(44, 44, 46); border-radius: 5px; text-align :center">
+                        100mN1234567E1234567 | 1kmN1234E1234
+                    </div>
+                    <hr class="mb-1">
+                    <div
+                        style="height: 310px; width: 510px; background-color: rgb(44, 44, 46); border-radius: 5px; text-align :center">
+                        <h1>ATTENZIONE!!!</h1>  
+                        
+                        <h10>•Cancellare le cache del Browser <br> se non dovessero apparire/sparire i punti </h10>
+
+                        
+                    </div>
+                    <hr class="mb-4">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- inizio Footer -->
+
+    <!-- fine Footer -->
+
+
+
+
+
+
+
+    <script>
+        $("button").click(function () {
+            $('html,body').animate({
+                scrollTop: $("cboxmain").offset().top
+            },
+                'slow');
+        });
+    </script>
+
+</body>
+
+</html>

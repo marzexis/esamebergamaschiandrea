@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ita" { width: 150%; height: 150%; height: auto; }>
+
+<head>
+
+    <meta charset="utf-8">
+
+ 
+    <link rel="icon" href="img\favicon.png" type="image/png" sizes="32x32">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link href="cover.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="true">
+
+    <style>
+        /* test */
+
+        div.example {
+            background-color: lightgrey;
+            padding: 20px;
+        }
+
+        @media screen and (min-width: 601px) {
+            div.example {
+                font-size: 80px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            div.example {
+                font-size: 35px;
+            }
+        }
+
+        /* test */
+
+        .carousel-item img {
+            height: calc(150vh - 132px);
+            width: 150vw;
+            margin: auto;
+            object-fit: cover;
+        }
+
+        .container {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .bar1,
+        .bar2,
+        .bar3 {
+            width: 35px;
+            height: 5px;
+            ;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-8px, -8px);
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+    </style>
+
+
+
+    <title>ITBroaband</title>
+</head>
+
+<body class="text-center" >
+
+    <div class="cover-container d-flex w-150 h-150 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+
+                <h3 class="masthead-brand example">AllMyData <img src="db.png" style="width: 23px; height:23px; bottom: 6px;"> </img></h3 >
+                <nav class="nav nav-masthead justify-content-center">
+
+                    <div class="d-flex flex-grow-1;">
+
+
+                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="edit.html">Edit</a>
+                        <a class="nav-link" href="maps.html">Maps</a>
+                        
+                       
+                    </div>
+
+
+
+                </nav>
+            </div>
+        </header>
+        <div class="row">
+            <main role="main" class="row inner cover" style="margin-left: 10%; margin-right: 10%;">
+
+            <h3 class="cover-heading" style="padding-top: 5%;padding-bottom: 15%;">Per la creazione di questa pagina ho
+                utilizzato:</h3>
+
+
+        
+            
+            <div class="col-md-4 text-box-reversed" style="margin-top: 5%;">
+                <img src="./img/html5.png" style="float: center ; width: 150px; height: 150px;">
+                <p style="padding-top:2vw;">
+                    Necessario per lo "scheletro" del sito
+                </p>
+                
+
+            </div>
+            
+            <div class="col-md-4 text-box" style="margin-top: 5%;" >
+                <img src="./img/css3.png" style=" width: 150px; height: 150px;">
+                <p style="float: right ;padding-top:2vw;">
+                   Necessario per l'abbellimento del sito
+                </p>
+                
+            </div>
+
+
+            <div class="col-md-4 text-box-reversed" style="margin-top: 5%;">
+                <img src="./img/javascript.png" style=" width: 150px; height: 150px;">
+                <p style="float: left ;padding-top:2vw; ;">
+                    Per la Gestione dei diversi iFrame
+                </p>
+                
+            </div>
+
+            <div class="col-md-4 text-box-reversed" style="margin-top: 5%;">
+                <img src="./img/bootstrap.png" style=" width: 150px; height: 150px;">
+                <p style="float: left ;padding-top:2vw; ">
+                    Framework Css
+                </p>
+                
+            </div>
+
+            
+
+            <div class="col-md-4 text-box-reversed" style="margin-top: 5%; ">
+                <img src="./img/php.png" style=" width: 150px; height: 150px;">
+                <p style="float: left ;padding-top:2vw;">
+                    Gestione Database, Gestione Query e Redirect
+                </p>
+                
+            </div>
+            <div class="col-md-4 text-box-reversed" style="margin-top: 5%; ">
+                <img src="./img/openlayer.png" style=" width: 150px; height: 150px;">
+                <p style="float: left ;padding-top:2vw; ">
+                    Framework Mappe
+                </p>
+                
+            </div>
+            
+        </div>
+
+        </main>
+
+        
+        
+
+
+    
+
+        <!-- Footer -->
+        <footer class="mastfoot mt-auto" >
+            <!-- Copyright -->
+            <div class="inner">
+                <p>A cura di <a href="https://www.instagram.com/andreaberga_/?hl=it">Andrea Bergamaschi</a> <a href="credits.html">©</a></p>
+            </div>
+            <!-- Copyright -->
+
+        </footer>
+        <!-- Footer -->
+
+        <script>
+            function myFunction(x) {
+                x.classList.toggle("change");
+            }
+
+        </script>
+      
+        
+        
+
+    </div>
+
+</body>
+
+</html>

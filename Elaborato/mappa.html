@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/css/ol.css"
+    type="text/css">
+  <style>
+    .map {
+      height: 700px;
+      width: 1300px;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.3.1/build/ol.js"></script>
+  <title>OpenLayers</title>
+</head>
+
+<body>
+
+  <div>
+    <div id="map" class="map center"></div>
+    <div id="map" class="map center"></div>
+    <div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+
+
+    window.onload = init;
+
+    function init() {
+
+      var container = document.getElementById('popup');
+      var content = document.getElementById('popup-content');
+      var closer = document.getElementById('popup-closer');
+
+      var overlay = new ol.Overlay({
+        element: container,
+        autoPan: true,
+        autoPanAnimation: {
+          duration: 250
+        }
+      });
+
+
+
+
+      const map = new ol.Map({
+        view: new ol.View({
+          center: ol.proj.fromLonLat([15.2736, 40.6925]),
+          zoom: 5.5
+
+        }),
+
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        overlays: [overlay]
+      })
+
+      
+      
+    
+      //lettura adsl
+      const adsl = new ol.layer.VectorImage({
+        source: new ol.source.Vector({
+          url: 'banana.json',
+          format: new ol.format.GeoJSON()
+
+        }),
+        visible: true,
+        title: '1',
+       
+      })
+
+    
+    
+
+      var overlay = new ol.Overlay({
+        element: container,
+        autoPan: true,
+        autoPanAnimation: {
+          duration: 250
+        }
+      });
+      map.addOverlay(overlay);
+    
+      closer.onclick = function () {
+        overlay.setPosition(undefined);
+        closer.blur();
+        return false;
+      };
+    
+    
+    
+    
+    
+    
+      map.addLayer(adsl);
+    
+
+
+    var highlightStyle = new ol.style.Style({
+      fill: new ol.style.Fill({
+        color: 'rgba(255,255,255,0.2)'
+      }),
+      stroke: new ol.style.Stroke({
+        color: '#ff3c00',
+        width: 3
+      })
+
+    });
+
+    var selected = null;
+
+    map.on('pointermove', function (e) {
+      if (selected !== null) {
+        selected.setStyle(undefined);
+        selected = null;
+      }
+
+      map.forEachFeatureAtPixel(e.pixel, function (f) {
+        selected = f;
+        f.setStyle(highlightStyle);
+        return true;
+      });
+
+    });
+
+
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>
